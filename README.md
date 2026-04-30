@@ -1,31 +1,87 @@
-# Configurando o banco de dados da Adventure Works
+# Adventure Works - Data Analytics Project
 
-A Adventure Works é um banco de dados OLTP fictício disponibilizado pela Microsoft para desenvolvimento e treinamento. Ele representa os dados de uma indústria de bicicletas fictícia com 500 produtos distintos, 20000 clientes e 31000 pedidos. Esses dados estão distribuídos em 68 tabelas dividas em 5 schemas: HR (Recursos humanos), sales (vendas), production (produção) e purchasing (compras).
+Este projeto tem como objetivo construir uma solução de analytics ponta a ponta utilizando a base Adventure Works, aplicando boas práticas de Engenharia de Dados com dbt e Databricks.
 
-## Configurando seu próprio banco de dados:
+O foco é transformar dados transacionais (OLTP) em um modelo analítico estruturado (OLAP), permitindo análises eficientes de vendas, clientes e produtos.
 
-### Manualmente
+---
 
-Se você já possui um banco de dados PostgreSQL instalado ou quer criá-lo da forma que preferir, pode simplesmente popular esse banco usando o arquivo `install.sql`
+## 🧱 Arquitetura do Projeto
 
-1. Baixe o arquivo ou clone esse projeto para seu computador
+O projeto foi desenvolvido seguindo a arquitetura em camadas do dbt:
 
-2. Na pasta onde o arquivo `install.sql` estiver localizado, rode o comando abaixo para popular o banco de dados:
+### 🔹 Staging
+- Limpeza e padronização dos dados brutos
+- Seleção de colunas relevantes
+- Renomeação e tratamento de tipos de dados
 
-```
-dropdb --if-exists -U [seu-usuario] -h [seu-host] Adventureworks &&
-createdb -U [seu-usuario] -h [seu-host] Adventureworks && 
-cat install.sql | psql -U [seu-usuario] -h [seu-host] -d Adventureworks
-```
+### 🔹 Intermediate
+- Aplicação de regras de negócio
+- Junções entre tabelas
+- Preparação dos dados para o modelo final
 
-# Diagrama
+### 🔹 Marts
+- Construção do modelo dimensional
+- Criação de tabelas fato e dimensões
 
-![](AdventureWorksERD.jpeg)
+**Tabelas principais:**
+- `fact_sales`
+- `dim_customers`
+- `dim_products`
+- `dim_dates`
+- `dim_locations`
+- `dim_sales_reasons`
 
-### Referências:
+---
 
-https://github.com/NorfolkDataSci/adventure-works-postgres
-https://github.com/lorint/AdventureWorks-for-Postgres
-https://msftdbprodsamples.codeplex.com/downloads/get/880662
-https://txtrainingstore.blob.core.windows.net/db-backup-aw2019/AdventureWorksERD
+## 🧪 Qualidade dos Dados
 
+Foram implementados testes utilizando dbt para garantir:
+
+- Integridade de chaves primárias
+- Relacionamentos entre tabelas
+- Consistência dos dados
+
+---
+
+## 🗄️ Tecnologias Utilizadas
+
+- **Databricks** → Data Warehouse / Lakehouse
+- **dbt** → Transformação e modelagem de dados
+- **GitHub** → Versionamento
+- **Power BI** → Visualização de dados
+
+---
+
+## 📊 Camada Analítica
+
+Os dados finais foram modelados em formato estrela (Star Schema), permitindo análises como:
+
+- Performance de vendas
+- Análise por produto
+- Comportamento de clientes
+- Motivos de venda
+
+---
+
+## ⚠️ Observação
+
+Os dados brutos não estão incluídos neste repositório, pois foram carregados diretamente no Databricks, seguindo boas práticas de engenharia de dados.
+
+---
+
+## 📌 Estrutura do Projeto
+models/
+├── staging/
+├── intermediate/
+└── marts/
+macros/
+tests/
+seeds/
+snapshots/
+
+---
+
+## 🚀 Resultado
+
+Este projeto demonstra a construção de um pipeline completo de dados, desde a ingestão até a camada analítica, utilizando boas práticas de mercado.
