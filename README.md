@@ -7,7 +7,7 @@ O foco é transformar dados transacionais (OLTP) em um modelo analítico estrutu
 ---
 
 ## 🧱 Arquitetura do Projeto
-
+ 
 O projeto foi desenvolvido seguindo a arquitetura em camadas do dbt:
 
 ### 🔹 Staging
