@@ -1,6 +1,18 @@
 # you shouldn't commit these into source control
 # these are the default directory names, adjust/add to fit your needs
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2740501ed52669f6fa711ca3ff351eefd8b7ec60
 target/
 dbt_packages/
 logs/
 dbt_internal_packages/
+<<<<<<< HEAD
+=======
+
+# dados e configs 
+data/
+.env
+profiles.yml
+>>>>>>> 2740501ed52669f6fa711ca3ff351eefd8b7ec60

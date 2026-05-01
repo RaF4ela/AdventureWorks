@@ -1,0 +1,87 @@
+version: 2
+
+sources:
+  - name: adventure_works
+    catalog: dev
+    schema: raw_adventure_works
+
+    tables:
+      - name: address
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: customer
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: product
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: product_category
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: product_subcategory
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: sales_order_detail
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: sales_order_header
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: sales_order_header_sales_reason
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: sales_reason
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: person
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: store
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: credit_card
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: state_province
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: country_region
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: sales_territory
+        columns:
+          - name: _c0
+            tests: [not_null]
+
+      - name: sales_person
+        columns:
+          - name: _c0
+            tests: [not_null]

@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+
+  - name: dim_products
+    columns:
+      - name: product_id
+        tests: [not_null, unique]
+
+  - name: dim_locations
+    columns:
+      - name: address_id
+        tests: [not_null, unique]
+
+  - name: dim_sales_reasons
+    columns:
+      - name: sales_reason_id
+        tests: [not_null]
+
+  - name: dim_dates
+    columns:
+      - name: date_id
+        tests: [not_null, unique]
+
+  - name: fact_sales
+    columns:
+      - name: sales_order_detail_id
+        tests: [not_null]
